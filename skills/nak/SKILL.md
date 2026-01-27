@@ -12,10 +12,10 @@ GitHub: https://github.com/fiatjaf/nak
 
 ## Installation
 
-To install (or upgrade) nak on linux-amd64:
+To install (or upgrade) nak:
 
 ```bash
-curl -L -o /usr/local/bin/nak "$(curl -s https://api.github.com/repos/fiatjaf/nak/releases/latest | jq -r '.tag_name' | awk '{print "https://github.com/fiatjaf/nak/releases/download/" $0 "/nak-" $0 "-linux-amd64"}')" && chmod +x /usr/local/bin/nak
+curl -sSL https://raw.githubusercontent.com/fiatjaf/nak/master/install.sh | sh
 ```
 
 ## Core Concepts
