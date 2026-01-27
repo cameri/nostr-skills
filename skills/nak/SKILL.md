@@ -1,6 +1,7 @@
 ---
 name: nak
 description: Interact with Nostr protocol using the nak CLI tool. Use to generate Nostr secret keys, encode and decode Nostr identifiers (hex/npub/nsec/nip05/etc), fetch events from relays, sign and publish Nostr events, and more.
+license: CC-BY-SA-4.0
 ---
 
 # nak - Nostr Army Knife
@@ -27,7 +28,10 @@ Based on analyzing extensive real-world usage, here are the fundamental concepts
 *"Finding events and data on Nostr"*
 
 **Basic:**
-- Query by event ID: "I want THIS specific event"
+- Fetch by identifier: "Get event/profile without knowing relays"
+  - `nak fetch nevent1...` (uses embedded relay hints)
+  - `nak fetch alex@gleasonator.dev` (NIP-05 resolution)
+- Query by event ID: "I want THIS specific event from a relay"
   - `nak req -i <event_id> <relay>`
 - Query by author: "Show me everything from this person"
   - `nak req -a <pubkey> <relay>`
@@ -35,12 +39,13 @@ Based on analyzing extensive real-world usage, here are the fundamental concepts
   - `nak req -k <kind> <relay>`
 
 **Intermediate:**
+- Fetch addressable events: "Get event by naddr/nprofile"
+  - `nak fetch naddr1...` (kind, author, identifier encoded)
+  - `nak fetch -r relay.primal.net naddr1...` (override relays)
 - Filter by multiple criteria: "Find posts by author X of kind Y"
   - `nak req -k 1 -a <pubkey> <relay>`
 - Tag-based queries: "Find events tagged with bitcoin"
   - `nak req --tag t=bitcoin <relay>`
-- Addressable events: "Get the latest version of this replaceable event"
-  - `nak req -k 30717 -a <author> -d <identifier> <relay>`
 
 **Advanced:**
 - Search with ranking: "Find trending/top content"
@@ -292,6 +297,21 @@ nak key generate | tee secret.key | nak key public | nak encode npub
 **Verify and pipe:**
 ```bash
 nak event -c "test" --sec <key> | nak verify && echo "Valid"
+```
+
+### Fetch vs Req
+
+**nak fetch uses relay hints from identifiers:**
+```bash
+nak fetch nevent1...  # Uses relays encoded in nevent
+nak fetch naddr1...   # Uses relays encoded in naddr  
+nak fetch alex@gleasonator.dev  # Resolves NIP-05
+nak fetch -r relay.primal.net naddr1...  # Override relays
+```
+
+**nak req requires explicit relay specification:**
+```bash
+nak req -i <event_id> wss://relay.example.com
 ```
 
 ### Edge Cases
