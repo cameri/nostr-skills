@@ -1,6 +1,6 @@
 # Nostr Skills
 
-A collection of skills for working with the Nostr protocol using CLI tools.
+A collection of skills for working with the Nostr protocol.
 
 ## Available Skills
 
