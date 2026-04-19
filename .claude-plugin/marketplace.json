@@ -1,0 +1,31 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "soapbox-pub-nostr-skills",
+  "description": "A collection of skills for working with the Nostr protocol.",
+  "owner": {
+    "name": "Soapbox",
+    "email": "contact@soapbox.pub"
+  },
+  "plugins": [
+    {
+      "name": "nostr",
+      "description": "Knowledge about the Nostr protocol. Use to view up-to-date NIPs, discover capabilities of the Nostr protocol, and to implement Nostr functionality correctly.",
+      "category": "developer-tools",
+      "author": {
+        "name": "Soapbox",
+        "email": "contact@soapbox.pub"
+      },
+      "source": "./skills/nostr"
+    },
+    {
+      "name": "nak",
+      "description": "Interact with Nostr protocol using the nak CLI tool. Use to generate Nostr secret keys, encode and decode Nostr identifiers (hex/npub/nsec/nip05/etc), fetch events from relays, sign and publish Nostr events, and more.",
+      "category": "developer-tools",
+      "author": {
+        "name": "Soapbox",
+        "email": "contact@soapbox.pub"
+      },
+      "source": "./skills/nak"
+    }
+  ]
+}
