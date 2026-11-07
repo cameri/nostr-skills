@@ -1,0 +1,8 @@
+{
+  "name": "ngit",
+  "description": "Manage Git repositories using Nostr for decentralized coordination. Use to clone/add Nostr-based repositories, manage pull requests across Nostr relays, publish repositories to Nostr, and understand the hybrid Git+Nostr architecture.",
+  "version": "0.1.0",
+  "keywords": ["ngit", "git", "nostr", "decentralized", "repositories"],
+  "license": "CC-BY-SA-4.0",
+  "type": "task-execution"
+}

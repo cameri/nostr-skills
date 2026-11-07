@@ -8,5 +8,7 @@
     "cli",
     "events",
     "relays"
-  ]
+  ],
+  "license": "CC-BY-SA-4.0",
+  "type": "task-execution"
 }

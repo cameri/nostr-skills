@@ -1,0 +1,39 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "nostr-skills",
+  "version": "0.1.0",
+  "description": "Collection of skills for working with the Nostr protocol and decentralized applications",
+  "owner": {
+    "name": "Nostr Skills Contributors"
+  },
+  "license": "CC-BY-SA-4.0",
+  "plugins": [
+    {
+      "name": "nostr",
+      "description": "Knowledge about the Nostr protocol. Use to view up-to-date NIPs, discover capabilities of the Nostr protocol, and implement Nostr functionality correctly.",
+      "version": "0.1.0",
+      "source": "./skills/nostr",
+      "category": "domain-expertise",
+      "keywords": ["nostr", "protocol", "nips", "documentation"],
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "nak",
+      "description": "Interact with Nostr protocol using the nak CLI tool. Use to generate Nostr secret keys, encode and decode Nostr identifiers, fetch events from relays, sign and publish Nostr events, and more.",
+      "version": "0.1.0",
+      "source": "./skills/nak",
+      "category": "task-execution",
+      "keywords": ["nak", "nostr", "cli", "events", "relays"],
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "ngit",
+      "description": "Manage Git repositories using Nostr for decentralized coordination. Use to clone/add Nostr-based repositories, manage pull requests across Nostr relays, publish repositories to Nostr, and understand the hybrid Git+Nostr architecture.",
+      "version": "0.1.0",
+      "source": "./skills/ngit",
+      "category": "task-execution",
+      "keywords": ["ngit", "git", "nostr", "decentralized", "repositories"],
+      "license": "CC-BY-SA-4.0"
+    }
+  ]
+}
